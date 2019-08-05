@@ -1,5 +1,9 @@
 package com.mytoshika.rest;
 
+import java.io.IOException;
+
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -7,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.databind.JsonMappingException;
 import com.mytoshika.entity.User;
 import com.mytoshika.service.UserService;
 
@@ -32,5 +38,14 @@ public class LoginController {
 		User user = userService.findUserByEmail(email);
 
 		return user;
+	}
+	
+	@RequestMapping("/test2")
+	public String getTestData(HttpServletRequest request) throws JsonParseException, JsonMappingException, IOException {
+		
+		
+		System.out.println("email="+request.getHeader("email"));
+ 
+		return "SUCCESSFULL DATA";
 	}
 }

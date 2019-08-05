@@ -1,11 +1,12 @@
-## Spring Boot + Rest + Hibernate + JPA + MySQL
-- Spring Boot to store data into Mysql database using JPA Repository with very minimal configuration.
+## File Upload and Submit Form Data In Spring Boot + Rest + Hibernate + JPA + MySQL
+- File Upload and submit form data in Spring Boot to store data into Mysql database using JPA Repository with very minimal configuration.
 - It will run in all cases and there will not be 403 error in response.
 
 ### Usage
 
 - Run the application and go on http://localhost:8082/
 - Use the LoginController urls to invoke controllers methods.
+- Set path in application.properties where files will be uploaded.
 
 ### Build and run
 
